@@ -6,15 +6,17 @@ import { CheckIcon } from 'lucide-react';
 interface StakeholderCardProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   description: string;
-  features: string[];
+  features?: string[];
   icon?: string | React.ReactNode;
+  imageUrl?: string;
   variant?: 'default' | 'primary' | 'secondary' | 'accent';
 }
 
 const StakeholderCard: React.FC<StakeholderCardProps> = ({
   title,
   description,
-  features,
+  features = [],
+  imageUrl,
   icon,
   variant = 'default',
   className,
@@ -43,24 +45,36 @@ const StakeholderCard: React.FC<StakeholderCardProps> = ({
           )}
         </div>
       )}
+
+      {imageUrl && (
+        <div className="mb-4 overflow-hidden rounded-md">
+          <img 
+            src={imageUrl} 
+            alt={title} 
+            className="w-full h-40 object-cover"
+          />
+        </div>
+      )}
       
       <h3 className="text-lg font-semibold mb-2">{title}</h3>
       <p className="text-muted-foreground mb-4">{description}</p>
       
-      <ul className="space-y-2">
-        {features.map((feature, index) => (
-          <li key={index} className="flex gap-2">
-            <CheckIcon className={cn(
-              "h-5 w-5 mt-0.5 flex-shrink-0",
-              variant === 'primary' && "text-ecosentinel-green-500",
-              variant === 'secondary' && "text-ecosentinel-blue-500",
-              variant === 'accent' && "text-ecosentinel-earth-500",
-              variant === 'default' && "text-primary"
-            )} />
-            <span className="text-sm">{feature}</span>
-          </li>
-        ))}
-      </ul>
+      {features.length > 0 && (
+        <ul className="space-y-2">
+          {features.map((feature, index) => (
+            <li key={index} className="flex gap-2">
+              <CheckIcon className={cn(
+                "h-5 w-5 mt-0.5 flex-shrink-0",
+                variant === 'primary' && "text-ecosentinel-green-500",
+                variant === 'secondary' && "text-ecosentinel-blue-500",
+                variant === 'accent' && "text-ecosentinel-earth-500",
+                variant === 'default' && "text-primary"
+              )} />
+              <span className="text-sm">{feature}</span>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

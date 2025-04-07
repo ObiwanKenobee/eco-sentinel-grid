@@ -128,9 +128,21 @@ export default function Index() {
             
             <div className="p-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                <StatCard label="Wildlife Incidents Tracked" value="2,450" trend="+12%" trendDirection="up" />
-                <StatCard label="Verified Supply Chains" value="87" trend="+23%" trendDirection="up" />
-                <StatCard label="Risk Areas Identified" value="142" trend="-8%" trendDirection="down" />
+                <StatCard 
+                  label="Wildlife Incidents Tracked" 
+                  value="2,450" 
+                  trend={{ value: "+12%", isPositive: true }} 
+                />
+                <StatCard 
+                  label="Verified Supply Chains" 
+                  value="87" 
+                  trend={{ value: "+23%", isPositive: true }} 
+                />
+                <StatCard 
+                  label="Risk Areas Identified" 
+                  value="142" 
+                  trend={{ value: "-8%", isPositive: false }} 
+                />
               </div>
               
               <div className="bg-gray-100 h-64 rounded-lg flex items-center justify-center mb-6">
@@ -164,31 +176,37 @@ export default function Index() {
               title="Field Rangers" 
               description="Equipping those on the frontlines with tools to detect, report, and respond to wildlife crime."
               imageUrl="/placeholder.svg"
+              features={["Real-time alerts", "Incident tracking", "Mobile reporting"]}
             />
             <StakeholderCard 
               title="NGOs & Advocates" 
               description="Providing data-driven insights for more effective conservation and human rights campaigns."
               imageUrl="/placeholder.svg"
+              features={["Data analysis", "Campaign metrics", "Stakeholder coordination"]}
             />
             <StakeholderCard 
               title="Government Agencies" 
               description="Supporting policy enforcement with intelligence and coordinated response systems."
               imageUrl="/placeholder.svg"
+              features={["Cross-agency data sharing", "Policy compliance", "Enforcement coordination"]}
             />
             <StakeholderCard 
               title="Local Communities" 
               description="Empowering residents to report suspicious activities and participate in protection efforts."
               imageUrl="/placeholder.svg"
+              features={["Anonymous reporting", "Community alerts", "Educational resources"]}
             />
             <StakeholderCard 
               title="ESG Officers" 
               description="Verifying ethical supply chains and demonstrating corporate responsibility commitments."
               imageUrl="/placeholder.svg"
+              features={["Supply chain verification", "Impact metrics", "Compliance reporting"]}
             />
             <StakeholderCard 
               title="Research Institutions" 
               description="Advancing conservation science with comprehensive ecosystem data and analytical tools."
               imageUrl="/placeholder.svg"
+              features={["Data access API", "Research collaboration", "Multi-variable analysis"]}
             />
           </div>
         </div>
