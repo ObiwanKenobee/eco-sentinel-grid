@@ -74,7 +74,17 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         .single();
 
       if (error) throw error;
-      setProfile(data);
+      
+      // Ensure the profile data conforms to the Profile interface
+      const profileData: Profile = {
+        id: data.id,
+        role: data.role,
+        full_name: data.full_name,
+        avatar_url: data.logo_url || null,  // Map logo_url to avatar_url
+        organization: data.organization
+      };
+      
+      setProfile(profileData);
     } catch (error) {
       console.error('Error fetching profile:', error);
     }

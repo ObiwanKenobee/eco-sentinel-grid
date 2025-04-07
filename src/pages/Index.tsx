@@ -1,12 +1,13 @@
+
 import React, { useEffect, useState } from 'react';
 import NavBar from "@/components/NavBar";
 import FeatureCard from "@/components/FeatureCard";
 import { Shield, Users, BarChart3, GanttChart } from "lucide-react";
-import { StakeholderCard } from "@/components/StakeholderCard"; 
-import { StatCard } from "@/components/StatCard";
-import { MapVisualization } from "@/components/MapVisualization";
+import StakeholderCard from "@/components/StakeholderCard"; 
+import StatCard from "@/components/StatCard";
+import MapVisualization from "@/components/MapVisualization";
 import { Button } from "@/components/ui/button";
-import { Footer } from "@/components/Footer";
+import Footer from "@/components/Footer";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 
