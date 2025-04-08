@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import NavBar from "@/components/NavBar";
 import FeatureCard from "@/components/FeatureCard";
@@ -129,17 +128,17 @@ export default function Index() {
             <div className="p-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                 <StatCard 
-                  label="Wildlife Incidents Tracked" 
+                  title="Wildlife Incidents Tracked" 
                   value="2,450" 
                   trend={{ value: "+12%", isPositive: true }} 
                 />
                 <StatCard 
-                  label="Verified Supply Chains" 
+                  title="Verified Supply Chains" 
                   value="87" 
                   trend={{ value: "+23%", isPositive: true }} 
                 />
                 <StatCard 
-                  label="Risk Areas Identified" 
+                  title="Risk Areas Identified" 
                   value="142" 
                   trend={{ value: "-8%", isPositive: false }} 
                 />
